@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Ou-eZQ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Ou-eZQ">
                                 <rect key="frame" x="147" y="327" width="75" height="65"/>
                                 <state key="normal" image="rock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,7 +25,7 @@
                                     <action selector="rockButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ssj-ks-2fH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-4a-7vS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-4a-7vS">
                                 <rect key="frame" x="372" y="327" width="75" height="65"/>
                                 <state key="normal" image="paper">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,13 +34,13 @@
                                     <action selector="paperButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HOe-cN-6sP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njG-Xn-gkC">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njG-Xn-gkC">
                                 <rect key="frame" x="372" y="327" width="75" height="65"/>
                                 <state key="normal" image="scissors">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="scissorsButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dOB-7d-hgu"/>
+                                    <segue destination="1HR-fy-hXs" kind="presentation" identifier="fromScissors" id="nly-c6-ul3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,12 +62,12 @@
                                 <exclude reference="ie6-4a-7vS"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jzb-A2-cC7"/>
-                                <exclude reference="waX-EX-cqp"/>
                                 <exclude reference="CDT-bb-XL8"/>
                                 <exclude reference="veY-Dd-LQC"/>
                                 <exclude reference="1fr-JZ-pHR"/>
                                 <exclude reference="nJ7-HD-4ez"/>
+                                <exclude reference="jzb-A2-cC7"/>
+                                <exclude reference="waX-EX-cqp"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -75,15 +75,18 @@
                                 <include reference="ie6-4a-7vS"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jzb-A2-cC7"/>
-                                <include reference="waX-EX-cqp"/>
                                 <include reference="CDT-bb-XL8"/>
                                 <include reference="veY-Dd-LQC"/>
                                 <include reference="1fr-JZ-pHR"/>
                                 <include reference="nJ7-HD-4ez"/>
+                                <include reference="jzb-A2-cC7"/>
+                                <include reference="waX-EX-cqp"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="1HR-fy-hXs" kind="presentation" identifier="showResults" id="lRC-QI-6gV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,9 +104,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PaperCoversRock" translatesAutoresizingMaskIntoConstraints="NO" id="qZz-8v-aGH">
-                                <rect key="frame" x="163" y="189" width="275" height="221"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLb-om-aSE">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -119,15 +119,30 @@
                                     <action selector="playAgain:" destination="1HR-fy-hXs" eventType="touchUpInside" id="LJF-yH-XKn"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="qZz-8v-aGH">
+                                <rect key="frame" x="163" y="189" width="275" height="221"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nmT-nl-BEw" firstAttribute="top" secondItem="qZz-8v-aGH" secondAttribute="bottom" constant="41" id="8PY-a7-bQe">
+                                <variation key="widthClass=compact" constant="173"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="qZz-8v-aGH" secondAttribute="centerX" id="BAr-Ma-qmT"/>
+                            <constraint firstItem="JLb-om-aSE" firstAttribute="top" secondItem="nmT-nl-BEw" secondAttribute="bottom" constant="19" id="Pp2-9T-ZPc"/>
                             <constraint firstAttribute="centerX" secondItem="qZz-8v-aGH" secondAttribute="centerX" id="VxL-ik-y5K"/>
-                            <constraint firstAttribute="centerX" secondItem="JLb-om-aSE" secondAttribute="centerX" id="fPa-Dl-3lz"/>
-                            <constraint firstAttribute="centerX" secondItem="nmT-nl-BEw" secondAttribute="centerX" id="gxA-Ed-TOM"/>
-                            <constraint firstItem="nmT-nl-BEw" firstAttribute="top" secondItem="JLb-om-aSE" secondAttribute="bottom" constant="45" id="i6b-U9-EVy"/>
+                            <constraint firstItem="bhs-95-9K4" firstAttribute="top" secondItem="nmT-nl-BEw" secondAttribute="bottom" constant="45" id="bg2-RP-HbG"/>
+                            <constraint firstItem="bhs-95-9K4" firstAttribute="top" secondItem="JLb-om-aSE" secondAttribute="bottom" constant="89" id="dYl-8h-ZfZ"/>
+                            <constraint firstAttribute="centerX" secondItem="nmT-nl-BEw" secondAttribute="centerX" id="fVg-3c-sg5"/>
+                            <constraint firstAttribute="centerX" secondItem="JLb-om-aSE" secondAttribute="centerX" id="hhb-t3-WXN"/>
+                            <constraint firstItem="nmT-nl-BEw" firstAttribute="top" secondItem="JLb-om-aSE" secondAttribute="bottom" constant="41" id="jgc-1F-3JZ"/>
+                            <constraint firstItem="nmT-nl-BEw" firstAttribute="top" secondItem="JLb-om-aSE" secondAttribute="bottom" constant="22" id="lTU-mi-8Fl">
+                                <variation key="widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstItem="qZz-8v-aGH" firstAttribute="top" secondItem="gga-a6-44R" secondAttribute="bottom" constant="8" id="mkb-zz-tdf">
+                                <variation key="widthClass=compact" constant="132"/>
+                            </constraint>
                             <constraint firstAttribute="centerY" secondItem="qZz-8v-aGH" secondAttribute="centerY" id="oO6-qU-YPf"/>
-                            <constraint firstItem="JLb-om-aSE" firstAttribute="top" secondItem="qZz-8v-aGH" secondAttribute="bottom" constant="34" id="zT3-Xn-xa7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -135,10 +150,16 @@
                                 <exclude reference="nmT-nl-BEw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fPa-Dl-3lz"/>
-                                <exclude reference="zT3-Xn-xa7"/>
-                                <exclude reference="gxA-Ed-TOM"/>
-                                <exclude reference="i6b-U9-EVy"/>
+                                <exclude reference="BAr-Ma-qmT"/>
+                                <exclude reference="mkb-zz-tdf"/>
+                                <exclude reference="Pp2-9T-ZPc"/>
+                                <exclude reference="hhb-t3-WXN"/>
+                                <exclude reference="8PY-a7-bQe"/>
+                                <exclude reference="fVg-3c-sg5"/>
+                                <exclude reference="jgc-1F-3JZ"/>
+                                <exclude reference="lTU-mi-8Fl"/>
+                                <exclude reference="bg2-RP-HbG"/>
+                                <exclude reference="dYl-8h-ZfZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -147,10 +168,18 @@
                                 <include reference="nmT-nl-BEw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fPa-Dl-3lz"/>
-                                <include reference="zT3-Xn-xa7"/>
-                                <include reference="gxA-Ed-TOM"/>
-                                <include reference="i6b-U9-EVy"/>
+                                <include reference="BAr-Ma-qmT"/>
+                                <exclude reference="VxL-ik-y5K"/>
+                                <include reference="mkb-zz-tdf"/>
+                                <exclude reference="oO6-qU-YPf"/>
+                                <exclude reference="Pp2-9T-ZPc"/>
+                                <include reference="hhb-t3-WXN"/>
+                                <exclude reference="8PY-a7-bQe"/>
+                                <include reference="fVg-3c-sg5"/>
+                                <include reference="jgc-1F-3JZ"/>
+                                <exclude reference="lTU-mi-8Fl"/>
+                                <include reference="bg2-RP-HbG"/>
+                                <exclude reference="dYl-8h-ZfZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -162,13 +191,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxJ-Km-YG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126.5" y="400"/>
+            <point key="canvasLocation" x="1126" y="400"/>
         </scene>
     </scenes>
     <resources>
-        <image name="PaperCoversRock" width="160" height="120"/>
+        <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nly-c6-ul3"/>
+    </inferredMetricsTieBreakers>
 </document>

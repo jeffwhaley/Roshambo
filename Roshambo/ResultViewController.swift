@@ -42,6 +42,7 @@ class ResultViewController: UIViewController {
                 resultImage.image = UIImage(named: "RockCrushesScissors.jpeg")
                 resultLabel.text = "You Win!"
             }
+            
         } else if userThrow == .scissors {
             if computerThrow == .rock {
                 resultImage.image = UIImage(named: "RockCrushesScissors.jpeg")

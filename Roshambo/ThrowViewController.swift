@@ -14,6 +14,8 @@ enum Throw {
 
 class ThrowViewController: UIViewController {
     
+    var whichbutton: Throw?
+    
     func randomThrow() -> Throw {
         // generate a random throw from
         var t:Throw
@@ -34,10 +36,14 @@ class ThrowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        whichbutton = nil
     }
     
     @IBAction func rockButton(sender: AnyObject) {
         var controller: ResultViewController
+        
+        whichbutton = .rock
+        
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
         
         controller.userThrow = .rock
@@ -46,9 +52,23 @@ class ThrowViewController: UIViewController {
         self.presentViewController(controller, animated: true, completion: nil)
         
     }
+    
     @IBAction func paperButton(sender: AnyObject) {
+        whichbutton = .paper
+        performSegueWithIdentifier("showResults", sender: self)
     }
-    @IBAction func scissorsButton(sender: AnyObject) {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let controller = segue.destinationViewController as! ResultViewController
+        
+        if whichbutton == nil {
+            whichbutton = .scissors
+        }
+        
+        controller.userThrow = whichbutton
+        controller.computerThrow = randomThrow()
+        
     }
     
 }
