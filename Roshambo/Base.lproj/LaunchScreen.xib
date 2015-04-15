@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -23,19 +23,47 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="CIY-m5-DW6">
+                    <rect key="frame" x="62" y="245" width="75" height="65"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scissors" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-R6-qwA">
+                    <rect key="frame" x="344" y="245" width="75" height="65"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="OpY-6x-jqn">
+                    <rect key="frame" x="203" y="245" width="75" height="65"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
+                <constraint firstItem="MzX-R6-qwA" firstAttribute="top" secondItem="CIY-m5-DW6" secondAttribute="top" id="6zO-sl-rHn"/>
+                <constraint firstItem="MzX-R6-qwA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="245" id="82l-pn-5Uy"/>
+                <constraint firstAttribute="centerY" secondItem="OpY-6x-jqn" secondAttribute="centerY" id="DNg-Bi-rqb"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="MzX-R6-qwA" firstAttribute="top" secondItem="OpY-6x-jqn" secondAttribute="top" id="SM8-8m-xtR"/>
+                <constraint firstItem="OpY-6x-jqn" firstAttribute="leading" secondItem="CIY-m5-DW6" secondAttribute="trailing" constant="66" id="WWm-Ie-vXO"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="MzX-R6-qwA" firstAttribute="leading" secondItem="OpY-6x-jqn" secondAttribute="trailing" constant="66" id="Znn-aT-cbD"/>
+                <constraint firstItem="MzX-R6-qwA" firstAttribute="centerY" secondItem="OpY-6x-jqn" secondAttribute="centerY" id="at3-Qb-ZKS"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstAttribute="centerX" secondItem="OpY-6x-jqn" secondAttribute="centerX" id="noo-88-Kbc"/>
+                <constraint firstItem="OpY-6x-jqn" firstAttribute="centerY" secondItem="CIY-m5-DW6" secondAttribute="centerY" id="wLA-rj-Pik"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="DNg-Bi-rqb"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
 </document>

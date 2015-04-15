@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Throw View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ThrowViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,103 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Ou-eZQ">
+                                <rect key="frame" x="147" y="327" width="75" height="65"/>
+                                <state key="normal" image="rock">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-4a-7vS">
+                                <rect key="frame" x="372" y="327" width="75" height="65"/>
+                                <state key="normal" image="paper">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njG-Xn-gkC">
+                                <rect key="frame" x="372" y="327" width="75" height="65"/>
+                                <state key="normal" image="scissors">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="njG-Xn-gkC" firstAttribute="centerY" secondItem="yIT-Ou-eZQ" secondAttribute="centerY" id="1fr-JZ-pHR"/>
+                            <constraint firstAttribute="centerX" secondItem="yIT-Ou-eZQ" secondAttribute="centerX" constant="113.5" id="CDT-bb-XL8">
+                                <variation key="widthClass=compact" constant="114"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ie6-4a-7vS" secondAttribute="centerX" constant="-0.5" id="jzb-A2-cC7"/>
+                            <constraint firstAttribute="centerX" secondItem="njG-Xn-gkC" secondAttribute="centerX" constant="59.5" id="nJ7-HD-4ez">
+                                <variation key="widthClass=compact" constant="-114"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="yIT-Ou-eZQ" secondAttribute="centerY" constant="-59.5" id="veY-Dd-LQC"/>
+                            <constraint firstAttribute="centerY" secondItem="ie6-4a-7vS" secondAttribute="centerY" constant="60.5" id="waX-EX-cqp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ie6-4a-7vS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="jzb-A2-cC7"/>
+                                <exclude reference="waX-EX-cqp"/>
+                                <exclude reference="CDT-bb-XL8"/>
+                                <exclude reference="veY-Dd-LQC"/>
+                                <exclude reference="1fr-JZ-pHR"/>
+                                <exclude reference="nJ7-HD-4ez"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ie6-4a-7vS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="jzb-A2-cC7"/>
+                                <include reference="waX-EX-cqp"/>
+                                <include reference="CDT-bb-XL8"/>
+                                <include reference="veY-Dd-LQC"/>
+                                <include reference="1fr-JZ-pHR"/>
+                                <include reference="nJ7-HD-4ez"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439.5" y="400"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="TvR-f4-DEc">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="1HR-fy-hXs" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gga-a6-44R"/>
+                        <viewControllerLayoutGuide type="bottom" id="bhs-95-9K4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gQ9-CG-lk8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PaperCoversRock" translatesAutoresizingMaskIntoConstraints="NO" id="qZz-8v-aGH">
+                                <rect key="frame" x="163" y="189" width="275" height="221"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="qZz-8v-aGH" secondAttribute="centerX" id="VxL-ik-y5K"/>
+                            <constraint firstAttribute="centerY" secondItem="qZz-8v-aGH" secondAttribute="centerY" id="oO6-qU-YPf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxJ-Km-YG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="400"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PaperCoversRock" width="160" height="120"/>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
 </document>
