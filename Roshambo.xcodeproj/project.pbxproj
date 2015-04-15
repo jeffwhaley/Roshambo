@@ -13,6 +13,7 @@
 		1F216FCA1ADEA11400A853B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F216FC81ADEA11400A853B5 /* LaunchScreen.xib */; };
 		1F216FD61ADEA11400A853B5 /* RoshamboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F216FD51ADEA11400A853B5 /* RoshamboTests.swift */; };
 		1F216FE01ADEA53D00A853B5 /* ThrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F216FDF1ADEA53D00A853B5 /* ThrowViewController.swift */; };
+		1F216FE21ADEBCE000A853B5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F216FE11ADEBCE000A853B5 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1F216FD41ADEA11400A853B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F216FD51ADEA11400A853B5 /* RoshamboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboTests.swift; sourceTree = "<group>"; };
 		1F216FDF1ADEA53D00A853B5 /* ThrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrowViewController.swift; sourceTree = "<group>"; };
+		1F216FE11ADEBCE000A853B5 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				1F216FBF1ADEA11400A853B5 /* AppDelegate.swift */,
 				1F216FDF1ADEA53D00A853B5 /* ThrowViewController.swift */,
 				1F216FC31ADEA11400A853B5 /* Main.storyboard */,
+				1F216FE11ADEBCE000A853B5 /* ResultViewController.swift */,
 				1F216FC61ADEA11400A853B5 /* Images.xcassets */,
 				1F216FC81ADEA11400A853B5 /* LaunchScreen.xib */,
 				1F216FBD1ADEA11300A853B5 /* Supporting Files */,
@@ -214,6 +217,7 @@
 			files = (
 				1F216FE01ADEA53D00A853B5 /* ThrowViewController.swift in Sources */,
 				1F216FC01ADEA11400A853B5 /* AppDelegate.swift in Sources */,
+				1F216FE21ADEBCE000A853B5 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
